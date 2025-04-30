@@ -15,6 +15,9 @@ body{
     padding: 0;
     background-color: black;
 }
+#title{
+    font-size: 25px;
+}
 #menu-bar{
     background-color: rgb(108, 0, 0);
     display: flex;
@@ -26,12 +29,15 @@ body{
     height: 4rem;
 }
 #menu-bar li a {
+    display: flex;
     color: blanchedalmond;
     font-weight: bold;
     padding: 0.5rem 1rem;
+    
 }
 #menu-bar li a:hover {
     background-color: aquamarine;
+    color: #000000;
 }
 #content{
     display: flex;
@@ -40,4 +46,19 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    
+    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
 }
+footer{
+    width: 100%;
+    position: absolute;
+    background-color: rgb(255, 0, 0);
+    padding: 1rem;
+    bottom: 0;
+}
+
