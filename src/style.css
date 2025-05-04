@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'hardcore pen';
+    src: url(/public/hardcore_pen_regular.ttf);
+}
 #logo-wrapper {
     /* max-width: 1280px;
     margin: 0 auto;
@@ -16,7 +20,14 @@ body{
     background-color: black;
 }
 #title{
-    font-size: 25px;
+    /* text-shadow:10px #000000; */
+    font-family: 'hardcore pen';
+    text-align: center;
+    justify-content: center;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    font-size: 40px;
 }
 #menu-bar{
     background-color: rgb(108, 0, 0);
@@ -40,7 +51,7 @@ body{
     color: #000000;
 }
 #content{
-    display: flex;
+    /* display: flex; */
     /* height: 100px; */
     background-image: url('/bg.gif');
     background-size: cover;
@@ -53,12 +64,39 @@ body{
     width: 100%;
     text-align: center;
     justify-content: center;
+    
+}
+#footer-item{
+    text-align: left;
+    
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+    height: 0.5rem;
+    padding: 1rem;
+    
+}
+#footer-item li a {
+    display: flex;
+    color: blanchedalmond;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    
+}
+#footer-item li a:hover {
+    background-color: aquamarine;
+    color: #000000;
 }
 footer{
     width: 100%;
-    position: absolute;
+    position:fixed;
     background-color: rgb(255, 0, 0);
-    padding: 1rem;
+    padding: 0.5rem;
     bottom: 0;
+    /* box-shadow:1rem,#000000; */
 }
+
 

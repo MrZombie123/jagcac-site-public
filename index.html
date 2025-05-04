@@ -7,36 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JAGCAC CREATIONS</title>
   </head>
+  <script src="/src/IncludeHTML.js"></script>
   <body>
-
+    
     <div id="logo-wrapper">
-
       <img id="logo" src="/public/logo.png"> 
     </div>
     <ul id="menu-bar">
-      <li><a href="/">
-        
+      <li><a href="/index.html">
+        <img id="home" src="/public/home.gif">
         HOME</a></li>
-      <li><a href="/">
-        
+      <li><a href="/public/about.html">   
+        <img id="about" src="/public/about.gif">
         ABOUT</a></li>
       <li><a href="/ushank/index.html">
-        <!-- <img id="vodkaspin" src="/public/vodkaspin.gif"> -->
+        <img id="projects" src="/public/projects.gif">
         PROJECTS</a></li>
-      <li><a href="/">
-        
+      <li><a href="/public/contact.html">
+        <img id="contact" src="/public/contact.gif">
         CONTACT</a></li>
     </ul>
+
+    <div w3-include-html="menu.html"></div> 
+    <!-- <script>
+    includeHTML.includeHTML();
+    </script>  -->
+
+
     <div id="content">
-      <img id="duck" src="/public/duck.gif"> 
+     
       <div id="title">
-        
-        <b><br><br>
+        <img id="duck" src="/public/duck.gif"> 
+        <b><br>
         
         WELCOME TO LAND OF DUMB!
         <br>
         JAGCAC CREATIONS !!!
         </b>
+        <img id="duck" src="/public/duck.gif"> 
       </div>
       <!-- ra<br>
       ra<br>
@@ -45,7 +53,12 @@
       ra<br>
       rasputin -->
       <br>
-      <img id="duck" src="/public/duck.gif"> 
+      
+      <br>
+
+      <a href="/public/wiporio.html">
+      <img id="wiporiomakespag" src="/public/wipmakespag.gif">
+      <div id="title"><br> FREE CHARACTER!</div></a>
     </div>
     
     <!-- <div id="app"></div> -->
@@ -56,8 +69,13 @@
     <footer>
 			
 			Last updated: April 2025
-      
+      <ul id="footer-item">
+        <li>
+      <a href="/index.html">
+        <img id="home" src="/public/home.gif">
+        HOME</a></li> </ul>
 		</footer>
 	</div>
+
   </body>
 </html>
