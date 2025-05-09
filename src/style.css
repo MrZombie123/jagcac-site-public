@@ -27,7 +27,7 @@ body{
       display: flex;
       margin: 0;
       padding: 0;
-    font-size: 40px;
+    font-size: 45px;
 }
 #menu-bar{
     background-color: rgb(108, 0, 0);
@@ -98,5 +98,73 @@ footer{
     bottom: 0;
     /* box-shadow:1rem,#000000; */
 }
+#blink_text{	
+    animation-name:blink;
+    /* width:280px; */
+    animation-duration:2s;
+    animation-timing-function:ease-in;
+    animation-iteration-count:Infinite;
+    }
+  
+  @keyframes blink{
+    0%{color:red;}
+    50%{color:white;}
+    100%{color:red;}}
 
+#rotateobj{
+    
+    padding: 0;
+    margin: 0;
+
+    /* animation-name: rotate;
+    
+    animation-duration:2s;
+    animation-timing-function:ease-in;
+    animation-iteration-count:initial;
+    @keyframes rotate {
+        
+    } */
+}
+#rotatearrowleft{
+    padding: 0;
+    margin: 0;
+    /* animation-name: rotate;
+    
+    animation-duration:2s;
+    animation-timing-function:ease-in;
+    animation-iteration-count:initial;
+    @keyframes rotate {
+        
+    } */
+}
+/* #rotatearrowleft{
+    color: #000000;
+}  */
+#rotatearrowright{
+    padding: 0;
+    margin: 0;
+}
+button{
+    background-color: transparent;
+    border: transparent;
+}
+button :hover{
+    
+   
+    -webkit-filter: drop-shadow(2px 2px 0 brown)
+    drop-shadow(-2px -2px 0 brown);
+    filter: drop-shadow(2px 2px 0 brown) 
+    drop-shadow(-2px -2px 0 brown);
+}
+button :active{
+   
+    -webkit-filter: drop-shadow(4px 4px 0 black)
+    drop-shadow(-4px -4px 0 black);
+    filter: drop-shadow(4px 4px 0 black) 
+    drop-shadow(-4px -4px 0 black);
+}
+.rotateobj{
+    padding: 0;
+    margin: 0;
+}
 

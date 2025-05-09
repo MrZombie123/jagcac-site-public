@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'hardcore pen';
+    src: url(/public/hardcore_pen_regular.ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+
+}
+#chimney-top
+{
+    padding: 0;
+    width: 512px; 
+     position:absolute;
+    height: 100%;
+    padding: 0;
+    left: 0;
+    background-size:100%;
+    background-repeat: no-repeat;
+    top: 0; 
+    /* background-repeat: repeat-y; */
+    background-image: url("/public/ushank/chimneytop.gif");
+}
+.sidebar{
+    height: 100%;
+    width: 512px; /* Set the width of the sidebar */
+     position:absolute;
+    z-index: 1; /* Stay on top */
+    background-size:100%;
+    left: 0;
+
+    
+     /* Disable horizontal scroll */
+    padding-top: 0;
+
+  }
+.sidebar .menu{
+    margin: 0 -1rem;
+    background-image: url("/public/ushank/chimney-selection-red.gif");
+    z-index: 2;
+  }
+
+  #chimney-repeating{
+   
+    /* min-height: 100vh; */
+    padding: 0;
+    width: 512px; 
+     position:absolute;
+    height: 100%;
+    padding: 0;
+    left: 0;
+    background-size:100%;
+    background-repeat: repeat-y;
+    top: 512px; 
+    /* background-repeat: repeat-y; */
+    background-image: url("/public/ushank/chimney-repeating.gif");
+    /* background-repeat: repeat-y; */
+    /* overflow-x: hidden; */
+    
+    
+  }
+
+.content{
+    /* display: flex; */
+    /* height: 100px; */
+    width: 100%;
+    height: 100%;
+    background-image: url('/public/ushank/background.png');
+    background-size:70%;
+    background-repeat: repeat-y;
+    background-position: center;
+    
+    
+    margin-left: 100px;
+    padding: 0px;
+
+    text-align: center;
+    justify-content: center;
+    
+}
+#header{
+   animation-name:blink-subtle;
+   animation-duration:2s;
+    animation-timing-function:ease-in;
+    animation-iteration-count:Infinite;
+    /* text-shadow:10px #000000; */
+    font-family: 'hardcore pen';
+    text-align: center;
+    justify-content: center;
+     
+      margin: 0;
+      padding: 0;
+    font-size: 50px;
+}
+ 
+  @keyframes blink{
+    0%{color:black;}
+    50%{color:rgb(11, 11, 11);}
+    100%{color:black;}}
+#title{
+  animation-name: bouncein;
+  animation-duration:1s;
+   animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  
+}  
+@keyframes bouncein{
+    0%{ transform: translate3d(0,  -400px, 0);}
+    40% { transform: translate3d(0,0, 0);}
+    60%{ transform: translate3d(0,  -100px, 0);}
+    100%{ transform: translate3d(0,0, 0);}
+}
+  
+#scalingbob{
+  animation-name:scaling;
+    /* width:280px; */
+    animation-duration:1s;
+    animation-timing-function:ease-in;
+    animation-iteration-count:Infinite;
+    }
+  
+  @keyframes scaling{
+    0%{scale: 50%;}
+    50%{scale: 75%;}
+    100%{scale: 50%;}
+  }
+  #rotatebitbob{
+    
+     animation-name:rotatebit;
+    /* width:280px; */
+    animation-duration:1s;
+    animation-timing-function:ease-in;
+    animation-iteration-count:Infinite;
+    }
+  
+  @keyframes rotatebit{
+    0%{rotate:10deg;}
+    50%{rotate: 30deg;}
+    100%{rotate: 10deg;}
+  }
+  #garentee{
+    padding-left: 80%;
+    
+   
+  }
