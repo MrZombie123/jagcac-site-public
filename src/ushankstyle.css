@@ -23,23 +23,104 @@ body{
     background-image: url("/public/ushank/chimneytop.gif");
 }
 .sidebar{
-    height: 100%;
+    
+    height: 512px;
     width: 512px; /* Set the width of the sidebar */
      position:absolute;
     z-index: 1; /* Stay on top */
     background-size:100%;
-    left: 0;
-
+   
+    
     
      /* Disable horizontal scroll */
-    padding-top: 0;
+
 
   }
-.sidebar .menu{
-    margin: 0 -1rem;
-    background-image: url("/public/ushank/chimney-selection-red.gif");
+
+  /*this smells*/
+ /* #menuitem-one{
+ top: 280px;
+      left: 128px;
+
+      margin: 0;
+      background-repeat: no-repeat;
+     justify-content: center;
+      position:absolute;
+     height: 64px;
+    width: 256px; 
+      
+      z-index: 4;
+ }
+ #menuitem-two{
+    top: 330px;
+      left: 128px;
+
+      margin: 0;
+      background-repeat: no-repeat;
+     justify-content: center;
+      position:absolute;
+     height: 64px;
+    width: 256px; 
+      
+     z-index: 3;
+ }
+  #menuitem-three{
+ top: 390px;
+      left: 128px;
+
+      margin: 0;
+      background-repeat: no-repeat;
+     justify-content: center;
+      position:absolute;
+     height: 64px;
+    width: 256px;
+      
+      z-index: 2;
+ }
+ #menuitem-four{
+   
+
+      margin: 0;
+      background-repeat: no-repeat;
+     justify-content: center;
+      position:absolute;
+     height: 64px;
+    width: 256px;
+    
+     z-index: 1;
+ } */
+  .sidebar-menu{
+
+     top: 0;
+    padding-top: 274px;
+    margin: 10px;
+    
+  }
+  #menubar{
+  
+  
+  
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    size: 0;
+   
+    
     z-index: 2;
   }
+
+
+  /* #menu-bar li a {
+    background-image: url("/public/ushank/chimney-selection-red.gif");
+      display: flex;
+
+
+      padding: 0.5rem 1rem;
+      
+  } */
+  
 
   #chimney-repeating{
     display: flex;
@@ -130,7 +211,7 @@ body{
     
      animation-name:rotatebit;
     /* width:280px; */
-    animation-duration:1s;
+    animation-duration:2s;
     animation-timing-function:ease-in;
     animation-iteration-count:Infinite;
     }
@@ -141,8 +222,8 @@ body{
     100%{rotate: 10deg;}
   }
   #garentee{
-    padding-left: 80%;
-    
+    margin-left: 80%;
+    top: 0;
    
   }
   footer{
@@ -150,7 +231,25 @@ body{
     width: 100%;
     height: 10%;
     position:fixed;
-    background-color: rgb(71, 68, 68);
+    background-image: url(/public/ushank/websitefooter.png);
 
     bottom: 0;
+  }
+  #cargif{
+
+    position:fixed;
+    bottom: 2.5%;
+     width: auto;
+    transform:scale(.5);
+    z-index: 5;
+
+    animation-name: transformrighttoleft;
+    animation-duration:6s;
+    animation-timing-function:linear;
+    animation-iteration-count:Infinite;
+
+  }
+  @keyframes transformrighttoleft{
+    from{translate: 110vw;}
+    to{translate: -20vw;}
   }
