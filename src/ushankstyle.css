@@ -1,3 +1,6 @@
+
+
+
 @font-face {
     font-family: 'hardcore pen';
     src: url(/public/hardcore_pen_regular.ttf);
@@ -7,6 +10,10 @@ body{
     padding: 0;
     background-color: black;
 
+    cursor: url(/public/ushank/cursorhover.png),pointer,alias;
+    cursor: url(/public/ushank/cursor.png),auto;
+
+    
 }
 #chimney-top
 {
@@ -99,7 +106,7 @@ body{
   #menubar{
   
   
-  
+    cursor: url(/public/ushank/cursor.png),auto;
     display: flex;
     justify-content: center;
     list-style: none;
@@ -229,7 +236,7 @@ body{
   footer{
     z-index: 2;
     width: 100%;
-    height: 10%;
+    height: 4.5rem;
     position:fixed;
     background-image: url(/public/ushank/websitefooter.png);
 
@@ -238,7 +245,7 @@ body{
   #cargif{
 
     position:fixed;
-    bottom: 2.5%;
+    bottom: 1rem;
      width: auto;
     transform:scale(.5);
     z-index: 5;
@@ -253,3 +260,4 @@ body{
     from{translate: 110vw;}
     to{translate: -20vw;}
   }
+ 
