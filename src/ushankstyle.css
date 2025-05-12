@@ -9,11 +9,15 @@ body{
     margin: 0;
     padding: 0;
     background-color: black;
+     pointer-events: auto;
+    cursor: url(/public/ushank/cursorhover.png),pointer;
+    cursor: url(/public/ushank/cursor.png),default;
 
-    cursor: url(/public/ushank/cursorhover.png),pointer,alias;
-    cursor: url(/public/ushank/cursor.png),auto;
 
     
+}
+a{
+      cursor: url(/public/ushank/cursorhover.png),pointer;
 }
 #chimney-top
 {
@@ -183,11 +187,28 @@ body{
       padding: 0;
     font-size: 50px;
 }
- 
-  @keyframes blink{
+ #warning{
+      text-align: center;
+    justify-content: center;
+     
+      margin: 0;
+      padding: 0;
+    font-size: 90px;
+   animation-name:blink-unsubtle;
+   animation-duration:.75s;
+    animation-timing-function:ease-in;
+    animation-iteration-count:Infinite;
+}
+  @keyframes blink-subtle{
     0%{color:black;}
-    50%{color:rgb(31, 31, 31);}
+    50%{color:rgb(41, 41, 41);}
     100%{color:black;}}
+    @keyframes blink-unsubtle{
+    0%{color:rgb(255, 0, 0);}
+    50%{color:rgb(41, 41, 41);}
+    100%{color:rgb(255, 0, 0);}}
+
+
 #title{
   animation-name: bouncein;
   animation-duration:1s;

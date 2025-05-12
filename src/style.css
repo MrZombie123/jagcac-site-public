@@ -18,6 +18,16 @@ body{
     margin: 0;
     padding: 0;
     background-color: black;
+   cursor: url(/public/pointerhand.png),default;
+    
+        cursor: url(/public/pointer.png),pointer;
+
+
+    
+}
+  
+a{
+      cursor: url(/public/pointerhand.png),default;
 }
 #title{
     /* text-shadow:10px #000000; */
@@ -58,7 +68,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     
-    
+    top: 20%;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -95,7 +105,9 @@ footer{
     position:fixed;
     background-color: rgb(255, 0, 0);
     padding: 0.5rem;
+    height: 10%;
     bottom: 0;
+    z-index: 4;
     /* box-shadow:1rem,#000000; */
 }
 #blink_text{	
@@ -145,6 +157,7 @@ footer{
     margin: 0;
 }
 button{
+     cursor: url(/public/pointer2.png),default;
     background-color: transparent;
     border: transparent;
 }
@@ -167,4 +180,37 @@ button :active{
     padding: 0;
     margin: 0;
 }
+#projects-monitar{
+  
+    z-index: 2;
+     position: relative;
+      top: 0%;
+z-index: 1;
+
+       margin: 0;
+    padding: 0;
+}
+#projects-keyboard{
+     position: relative;
+     z-index: 4;
+     right: 0%;
+     top: 0;
+     bottom: 100%;
+     left: 0;
+       padding-bottom: 10%;
+}
+#projects-tower{
+     position: relative;
+     z-index: 2;
+     right: 0%;
+     top: 0;
+     bottom: 100%;
+   
+     left: 5%;
+}
+#projects-fullsetup{
+    bottom: 100%;
+     padding-bottom: 10%;
+}
+
 
