@@ -139,7 +139,7 @@ a{
     padding: 0;
     width: 512px; 
      position:absolute;
-    height: 200svh;
+    height: 300svh;
     border: 0;
     padding: 0;
     left: 0;
@@ -151,7 +151,7 @@ a{
     background-image: url("/public/ushank/chimney-repeating.gif");
     /* background-repeat: repeat-y; */
     /* overflow-x: hidden; */
-    
+    z-index: 2;
     
   }
 
@@ -280,5 +280,17 @@ a{
   @keyframes transformrighttoleft{
     from{translate: 110vw;}
     to{translate: -20vw;}
+  }
+  #ushankrender{
+    size: 50%;
+    right: 0;
+    bottom: 0;
+    top: 50rem;
+    left: 20rem;
+    z-index: 0;
+    position: absolute;
+  }
+  #demodiscspin{
+    z-index: 0;
   }
  

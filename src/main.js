@@ -22,41 +22,45 @@
 // `
 
 // setupCounter(document.querySelector('#counter'))
-const rotateObj = document.querySelector('.rotateobj');
-const rotateArrowLeft = document.querySelector('rotatearrowleft');
-const rotateArrowRight = document.querySelector('rotatearrowright');
+const rotateObj = document.getElementById('pizzadisc');
+const rotateArrowLeft = document.getElementById('rotatearrowleft');
+const rotateArrowRight = document.getElementById('rotatearrowright');
 
 let currentRotation = 0;
+let targetRotation = 0;
+let t = 0;
 
 rotateArrowLeft.addEventListener('click',() =>{
     
-  roateAnim(rotateObj,-60);
+   targetRotation-=60;
+    // targetRotation=((targetRotation%360)+360)%360;
 })
 rotateArrowRight.addEventListener('click',() =>{
     
-  roateAnim(rotateObj,60);
+
+    targetRotation+=60;
+    // targetRotation=((targetRotation%360)+360)%360;
+
 })
-// function rotateAnim(rot,whichWay){
-//   var from = currentRotation
-//   var to = 60*whichWay;
-//   inter
-// }
 
- 
- const roateAnim= function (elem,diseredRotation) {
+ const Update= function (time) {
   
-  // currentRotation;
-  // diseredRotation += currentRotation;
-    currentRotation += 5;
-  
-    // if (currentRotation == diseredRotation) {
-    //  return;
-    // } else {
-     
-    rotateObj.style.transform = 'rotate(' + rot + 'deg)';
-  
-      // elem.style.left = rot;
-    // }
+    const deltaTime = time -t;
+
+    t=time;
+
+    RotatePizzaUpdate(deltaTime);
+
+    
+    requestAnimationFrame(Update);
   }
+ function RotatePizzaUpdate(deltaTime){
+      const easing = 0.01;
+      currentRotation +=(targetRotation-currentRotation)*easing *deltaTime;
+      rotateObj.style.transform = 'rotate(' + currentRotation + 'deg)';
+  
+ }
 
-setInterval(roateAnim,20);
+
+  requestAnimationFrame(Update);
+// setInterval(roateAnim,20);
