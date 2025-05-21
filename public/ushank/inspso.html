@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/ushankstyle.css" />
     <title>USHANK IN INSPORATION!!!</title>
+     <!-- <script src="/src/main.js"></script> -->
   </head>
   <body>
         <main class="sidebar">
@@ -34,7 +35,10 @@
             </ul>
           </nav>
           </nav>
-        <div id="chimney-repeating"></div>
+        <div id="chimney-repeating">
+          
+        </div>
+        
           <!-- <script>
         function changeOnClickImg() {
           if (document.getElementById("menuitem").style.backgroundImage == "url(/public/ushank/chimney-selection-red.gif)") {
@@ -51,15 +55,144 @@
       <main class="content"><br><br><br>
         <div id="warning">
         SPOILERS WARNING 
-        <br>AHEAD!!!
-        </div>  
-      </main>
+        <br>AHEAD!!! <br>
+        <br></div>
+        HELLO! Welcome to my page where i show off all (most) of the pictures i took <br>
+         when making Ushank in Trash Attack!!! I think some of you lads and lassers <br>
+         might find this, intriging. All pictures taken by me unless stated otherwise.
+        <div class="collapsible">
+          
+          
+           <img id="ep-one" src="ep-one.png" alt="insporation for the first episode">
+            </div>
+            <div class="collapsible-content">
 
+            
+               <div class="collapsible">
+          
+          
+                <img id="e1m1" src="levels/e1m1/level-poster-e1-m1.jpg" alt="e1m1">
+                </div>
+                    <div class="collapsible-content">
+
+                    <br>
+
+                        <img src="levels/e1m1/ushankhouse1.jpg" alt="Ushank House 1"><br>
+                        And this is the insporation for ushanks house(well, except the color...)<br>
+                        <img src="levels/e1m1/ushankhouse2.jpg" alt="Ushank House 1">
+                        <img src="levels/e1m1/ushankhouse3.jpg" alt="Ushank House 1">
+                        <br> You can tell I took alot from this house!<br> 
+                        <img src="levels/e1m1/ushankhouse4.jpg" alt="Ushank House 1">
+                        <img src="levels/e1m1/ushankhouse-scafolding.jpg" alt="Ushank House 1"><br>
+                        Even did the scafolding! <br>
+                            <br>
+                            <br>
+                            
+                        <img src="levels/e1m1/gasstation_phtoby-Mattinbgn.JPG" alt="Ushank House 1"><br>
+                        I found this when searching for 'Victoria Gas Station'<br>
+                        This images isn't mine, it is from <a href="https://commons.wikimedia.org/wiki/File:Woods_Point_Petrol_Station_001.JPG">https://commons.wikimedia.org/wiki/File:Woods_Point_Petrol_Station_001.JPG</a> <br>
+
+                      <img id="bob" src="/public/bob.png" alt=""><br>umm..
+                    </div>
+
+                 <div class="collapsible"><br>          
+                <img id="e1m1" src="levels/e1m1/level-poster-e1-m2.jpg" alt="e1m1">
+                </div>
+                      <div class="collapsible-content">
+
+                        
+                      </div>
+
+
+                <div class="collapsible">
+                <img id="e1m3" src="levels/e1m1/level-poster-e1-m3.jpg" alt="e1m3">
+                <br>
+                 
+                </div>
+                          <div class="collapsible-content"> <br>
+                              alright this level is mostly based off an area in Ballarat... <br>
+                              it's called Sovereign Hill! Go to it when you feel!<br>
+                              <img id="e1m3" src="levels/e1m1/hut.jpg" alt="e1m3">
+                              <br>
+                                This is a hut i made in highschool, based off a REAL hut in Sovereign Hill!
+                            </div>
+           
+                <div class="collapsible">
+           <img id="e1m4" src="levels/e1m1/level-poster-e1-m4.jpg" alt="e1m4">
+                </div>
+                      <div class="collapsible-content">
+
+                        
+                      </div>
+     <div class="collapsible">
+            <img id="e1m5" src="levels/e1m1/level-poster-e1-m5.jpg" alt="e1m5">
+                </div>
+                      <div class="collapsible-content">
+                      
+                        
+                      </div>
+
+             <div class="collapsible">
+            <img id="e1m6" src="levels/e1m1/level-poster-e1-m6.jpg" alt="e1m6">
+                </div>
+                      <div class="collapsible-content">
+                        this level is clearly a parody of the Great Ocean Road, but is fictionalized <br>
+                        to be bunkerized and built upon, with abestos (yuck!).
+                        
+                      </div>
+
+                 <div class="collapsible">
+            <img id="e1m7" src="levels/e1m1/level-poster-e1-m7.jpg" alt="e1m7">
+                </div>
+                      <div class="collapsible-content">
+
+                        
+                      </div>
+                </div>
+          
+        </div> 
+        <!-- thanks to <a href="https://jsfiddle.net/6yn0mewz/3/">https://jsfiddle.net/6yn0mewz/3/</a> for the collapsible children -->
+      </main>
+          
         
           <footer>
    
         <img id="cargif" src="/public/ushank/cargif.gif">
     
     </footer>
+      <!-- <script src="/src/main.js"></script>  -->
+    <script>
+        
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+         var chimney = document.getElementById('chimney-repeating')
+
+      var checkCollapcible = function() {
+        for (var j = coll.length - 1; j >= 0;  j--) {
+            if (coll[j].classList.contains('active')) {
+              console.log(j, coll[j].classList);
+              var c2 = coll[j].nextElementSibling;
+              console.log(c2);
+              c2.style.maxHeight = null;
+              c2.style.maxHeight = c2.scrollHeight + "px";
+              chimney.style.height = (c2.scrollHeight*1.4) + "px";
+            }
+          }
+      };
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            chimney.style.height = (content.scrollHeight*1.4)+ "px";
+          } 
+          window.setTimeout(checkCollapcible, 200);
+        });
+      }
+    </script>
   </body>
 </html>
