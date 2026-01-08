@@ -300,7 +300,12 @@ a{
     z-index: 0;
   }
 
-
+  #christ{
+    transform:scale(.75);
+    box-sizing: 75%;
+    z-index: 0;
+    
+  }
 
 
 button{
