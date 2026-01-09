@@ -4,28 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/fabicon.ico" />
     <link rel="stylesheet" href="/src/style.css" />
+    <script src="/src/main.js" id="mainjs"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JAGCAC CONTACT</title>
   </head>
   <body>
 
-    <div id="logo-wrapper">
-        <img id="logo" src="/public/logo.png"> 
-      </div>
-      <ul id="menu-bar">
-        <li><a href="/index.html">
-          <img id="home" src="/public/home.gif">
-          HOME</a></li>
-        <li><a href="/public/about.html">   
-          <img id="about" src="/public/about.gif">
-          ABOUT</a></li>
-        <li><a href="/public/projects.html">
-          <img id="projects" src="/public/projects.gif">
-          PROJECTS</a></li>
-        <li><a href="/public/contact.html">
-          <img id="contact" src="/public/contact.gif">
-          CONTACT</a></li>
-      </ul>
+     <div w3-include-html="menu-header.html">
 
     <div id="content">
     BEFORE YOU CONTACT US, PLEASE SEE THE <a href="/public/faq.html">FAQ!</a>
@@ -37,25 +22,10 @@
 
     </div>
 
-    <footer>
-			
-        Last updated: April 2025
-  <ul id="footer-item">
-    <li>
-  <a href="/index.html">
-    <img id="home" src="/public/home.gif">
-    HOME</a></li>
-   <li>
-      <a href="/public/privacy.html">
-        <img id="privacy" src="privacy.gif">
-        PRIVACY POLICY</a></li>
-       </ul>
-      <a href="/public/faq.html">
-      <div id="blink_text">
-      FAQ
-      </div>
-      </a>
-    </footer>
-  
-  </body>
+   
+    <div w3-include-html="footer.html"></div> 
+      
+      <script>
+      includeHTML();
+      </script> 
 </html>

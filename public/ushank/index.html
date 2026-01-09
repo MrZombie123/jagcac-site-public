@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/fabicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/ushankstyle.css" />
+      <script src="/src/main.js" id="mainjs"></script>
     <title>USHANK IN TRASH ATTACK!!!</title>
   </head>
   <body>
@@ -13,33 +14,8 @@
         <source src="/public/runner.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <main class="sidebar">
-      
-      
-        <div id="chimney-top"></div>
-        <nav class="sidebar">
-          <nav class="sidebar-menu">
-            <ul id="menubar">
-              <li>
-
-                 <!-- <a onclick="changeOnClickImg()" href="/public/ushank/index.html"> -->
-                  <a href="/public/ushank/index.html">
-                   <img id="menuitem-one" src="/public/ushank/homeone.gif" alt="home">
-                 </a><br>
-                  <a href="/public/ushank/about.html">
-                   <img id="menuitem-two" src="/public/ushank/aboutone.gif" alt="about">
-                 </a><br>
-                     <a href="/public/ushank/info.html">
-                   <img id="menuitem-three" src="/public/ushank/infoone.gif" alt="infomation">
-                 </a><br>
-                  <a href="/public/ushank/inspso.html">
-                   <img id="menuitem-four" src="/public/ushank/inspoone.gif" alt="insporation">
-                 </a><br>
-              </li>
-            </ul>
-          </nav>
-          </nav>
-        <div id="chimney-repeating"></div>
+    
+           <div w3-include-html="sidebar.html"></div> 
           <!-- <script>
         function changeOnClickImg() {
           if (document.getElementById("menuitem").style.backgroundImage == "url(/public/ushank/chimney-selection-red.gif)") {
@@ -52,7 +28,7 @@
           
           }
         </script> -->
-    </main>
+   
     
    
      
@@ -97,6 +73,9 @@
         <img id="cargif" src="/public/ushank/cargif.gif">
     
     </footer>
+    <script>
+      includeHTML();
+      </script> 
     <!-- <script type="module" src="/src/main.js"></script> -->
   </body>
 </html>

@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/fabicon.ico" />
     <link rel="stylesheet" href="/src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/src/main.js" id="mainjs"></script>
     <title>JAGCAC ABOUT</title>
   </head>
   <body>
@@ -12,29 +13,7 @@
         <source src="/public/about.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <div id="logo-wrapper">
-        <img id="logo" src="/public/logo.png"> 
-      </div>
-      <ul id="menu-bar">
-        <li><a href="/index.html">
-          <img id="home" src="/public/home.gif">
-          HOME</a></li>
-        <li><a href="/public/about.html">   
-          <img id="about" src="/public/about.gif">
-          ABOUT</a></li>
-        <li><a href="/public/projects.html">
-          <img id="projects" src="/public/projects.gif">
-          PROJECTS</a></li>
-        <li><a href="/public/contact.html">
-          <img id="contact" src="/public/contact.gif">
-          CONTACT</a></li>
-      </ul>
-      <div id="header"></div>
-      <script>
-      $(function(){
-          $("#header").load("header.html");
-      });
-      </script>
+     <div w3-include-html="menu-header.html"></div> 
 
       
     <div id="content">
@@ -70,26 +49,10 @@
           <br><br> <br>... thats it... for now... <br><br> <br><br><br>e
     </div>
     
-  </body>
-   <footer>
-			
-			Last updated: April 2025
-      <ul id="footer-item">
-        <li>
-      <a href="/index.html">
-        <img id="home" src="/public/home.gif">
-        HOME</a></li>
-       <li>
-      <a href="/public/privacy.html">
-        <img id="privacy" src="privacy.gif">
-        PRIVACY POLICY</a></li>
-      </ul>
-        <a href="/public/faq.html">
-          <div id="blink_text">
-          FAQ
-          
-        </div>
-      </a>
-		</footer>
+  <div w3-include-html="footer.html"></div> 
+      
+      <script>
+      includeHTML();
+      </script> 
     
 </html>

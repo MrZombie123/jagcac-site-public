@@ -5,53 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/fabicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/ushankstyle.css" />
+    <script src="/src/main.js" id="mainjs"></script>
     <title>USHANK IN INSPORATION!!!</title>
      <!-- <script src="/src/main.js"></script> -->
   </head>
   <body>
-        <main class="sidebar">
-      
-      
-        <div id="chimney-top"></div>
-        <nav class="sidebar">
-          <nav class="sidebar-menu">
-            <ul id="menubar">
-              <li>
-
-                 <!-- <a onclick="changeOnClickImg()" href="/public/ushank/index.html"> -->
-                  <a href="/public/ushank/index.html">
-                   <img id="menuitem-one" src="/public/ushank/homeone.gif" alt="home">
-                 </a><br>
-                  <a href="/public/ushank/about.html">
-                   <img id="menuitem-two" src="/public/ushank/aboutone.gif" alt="about">
-                 </a><br>
-                     <a href="/public/ushank/info.html">
-                   <img id="menuitem-three" src="/public/ushank/infoone.gif" alt="infomation">
-                 </a><br>
-                  <a href="/public/ushank/inspso.html">
-                   <img id="menuitem-four" src="/public/ushank/inspoone.gif" alt="insporation">
-                 </a><br>
-              </li>
-            </ul>
-          </nav>
-          </nav>
-        <div id="chimney-repeating">
-          
-        </div>
-        
-          <!-- <script>
-        function changeOnClickImg() {
-          if (document.getElementById("menuitem").style.backgroundImage == "url(/public/ushank/chimney-selection-red.gif)") {
-             document.getElementById("menuitem").style.backgroundImage = "url(/public/ushank/chimney-selection-white.gif)"
-          }
-          else if( document.getElementById("menuitem").style.backgroundImage == "url(/public/ushank/chimney-selection-white.gif)"){
-
-            document.getElementById("menuitem").style.backgroundImage = "url(/public/ushank/chimney-selection-red.gif)";
-          }
-          
-          }
-        </script> -->
-    </main>
+       
+           <div w3-include-html="sidebar.html"></div> 
       <main class="content"><br><br><br>
         <div id="warning">
         SPOILERS WARNING 
@@ -60,13 +20,11 @@
         HELLO! Welcome to my page where i show off all (most) of the pictures i took <br>
          when making Ushank in Trash Attack!!! I think some of you lads and lassers <br>
          might find this, intriging. All pictures taken by me unless stated otherwise.<br><br><br>  
-          Oh Yeah! this was ushank first concept art! <br>
+          Oh Yeah! this was Ushanks' first concept art! <br>
          <img id="christ" src="/public/ushank/levels/christ.jpg" alt="Ushanks' First Picture">
         <br>
          He hasn't changed a bit!
-        <div class="collapsible">
-          
-          
+        
            <img id="ep-one" src="ep-one.png" alt="insporation for the first episode">
             </div>
             <div class="collapsible-content">
@@ -154,7 +112,7 @@
                       </div>
                 </div>
           
-        </div> 
+        
         <!-- thanks to <a href="https://jsfiddle.net/6yn0mewz/3/">https://jsfiddle.net/6yn0mewz/3/</a> for the collapsible children -->
       </main>
           
@@ -198,5 +156,8 @@
         });
       }
     </script>
+     <script>
+      includeHTML();
+      </script> 
   </body>
 </html>

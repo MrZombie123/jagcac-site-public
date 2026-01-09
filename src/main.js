@@ -39,27 +39,29 @@
 // }
 
 
+function SetPizza()
+{
+  const rotateObj = document.getElementById('pizzadisc');
+  const rotateArrowLeft = document.getElementById('rotatearrowleft');
+  const rotateArrowRight = document.getElementById('rotatearrowright');
 
-const rotateObj = document.getElementById('pizzadisc');
-const rotateArrowLeft = document.getElementById('rotatearrowleft');
-const rotateArrowRight = document.getElementById('rotatearrowright');
+  let currentRotation = 0;
+  let targetRotation = 0;
+  let t = 0;
 
-let currentRotation = 0;
-let targetRotation = 0;
-let t = 0;
+  rotateArrowLeft.addEventListener('click',() =>{
+      
+    targetRotation-=60;
+      // targetRotation=((targetRotation%360)+360)%360;
+  })
+  rotateArrowRight.addEventListener('click',() =>{
+      
 
-rotateArrowLeft.addEventListener('click',() =>{
-    
-   targetRotation-=60;
-    // targetRotation=((targetRotation%360)+360)%360;
-})
-rotateArrowRight.addEventListener('click',() =>{
-    
+      targetRotation+=60;
+      // targetRotation=((targetRotation%360)+360)%360;
 
-    targetRotation+=60;
-    // targetRotation=((targetRotation%360)+360)%360;
+  })
 
-})
 
  const Update= function (time) {
   
@@ -82,8 +84,34 @@ rotateArrowRight.addEventListener('click',() =>{
 
   requestAnimationFrame(Update);
 // setInterval(roateAnim,20);
-
-
+}
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
 
 
 
