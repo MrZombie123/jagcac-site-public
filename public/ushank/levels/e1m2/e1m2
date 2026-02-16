@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/fabicon.ico" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/src/ushankstyle.css" />
+        <script src="/src/main.js" id="mainjs"></script>
+      <title>E1M2 - WORKIN' IN A COAL MINE</title>
+    </head>
+    <div w3-include-html="../../sidebar.html"></div> 
+
+                        
+
+    <footer>
+   
+        <img id="cargif" src="/public/ushank/cargif.gif">
+    
+    </footer>
+    <script>
+      includeHTML();
+      </script> 
+    <!-- <script type="module" src="/src/main.js"></script> -->
+  </body>
+</html>

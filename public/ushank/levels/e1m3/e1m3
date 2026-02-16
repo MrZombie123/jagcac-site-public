@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/fabicon.ico" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/src/ushankstyle.css" />
+        <script src="/src/main.js" id="mainjs"></script>
+      <title>E1M3 - YEEHAW IT</title>
+    </head>
+    <div w3-include-html="../../sidebar.html"></div> 
+
+                          <div class="collapsible-content"> <br>
+                              alright this level is mostly based off an area in Ballarat... <br>
+                              it's called Sovereign Hill! Go to it when you feel!<br>
+                              <img id="e1m3" src="levels/e1m1/hut.jpg" alt="e1m3">
+                              <br>
+                                This is a hut i made in highschool, based off a REAL hut in Sovereign Hill!
+                            </div>
+
+    <footer>
+   
+        <img id="cargif" src="/public/ushank/cargif.gif">
+    
+    </footer>
+    <script>
+      includeHTML();
+      </script> 
+    <!-- <script type="module" src="/src/main.js"></script> -->
+  </body>
+</html>
