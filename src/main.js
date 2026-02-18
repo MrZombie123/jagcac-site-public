@@ -111,6 +111,37 @@ function includeHTML() {
       return;
     }
   }
+
+   var coll = document.getElementsByClassName("collapsible");
+      var i;
+         var chimney = document.getElementById('chimney-repeating')
+
+      var checkCollapcible = function() {
+        for (var j = coll.length - 1; j >= 0;  j--) {
+            if (coll[j].classList.contains('active')) {
+              console.log(j, coll[j].classList);
+              var c2 = coll[j].nextElementSibling;
+              console.log(c2);
+              c2.style.maxHeight = null;
+              c2.style.maxHeight = c2.scrollHeight + "px";
+              chimney.style.height = (c2.scrollHeight ) + 2048  + "px";
+            }
+          }
+      };
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            chimney.style.height = (content.scrollHeight) + 2048 + "px";
+          } 
+          window.setTimeout(checkCollapcible, 200);
+        });
+      }
 }
 
 
