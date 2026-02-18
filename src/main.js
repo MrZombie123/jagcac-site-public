@@ -142,6 +142,38 @@ function includeHTML() {
           window.setTimeout(checkCollapcible, 200);
         });
       }
+
+       function setBackgroundHeight() {
+ 
+                    const body = document.body;
+                    const html = document.documentElement;
+
+                    const documentHeight = Math.max(
+                      body.scrollHeight, body.offsetHeight,
+                      html.clientHeight,  html.offsetHeight
+                    );
+
+                    
+                    document.getElementById('chimney-repeating').style.height = documentHeight + 'px';
+              }
+             
+              window.onload = setBackgroundHeight;
+
+              
+              window.onresize = setBackgroundHeight;
+             
+              document.querySelectorAll('details').forEach(detail => {
+                detail.addEventListener('toggle', setBackgroundHeight);
+            });
+        // const button = document.getElementById("button");
+        // button.addEventListener("click", ToggleParagraph);
+        // function ToggleParagraph() 
+        // {
+        // var paragraph = document.getElementById("Paragraph");
+        // // Toggle the 'hidden' class on the paragraph element
+        // paragraph.classList.toggle("hidden"); 
+        // // setBackgroundHeight();
+        // }     
 }
 
 
