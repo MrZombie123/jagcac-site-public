@@ -142,7 +142,7 @@ function includeHTML() {
           window.setTimeout(checkCollapcible, 200);
         });
       }
-
+     
        function setBackgroundHeight() {
  
                     const body = document.body;
@@ -156,15 +156,50 @@ function includeHTML() {
                     
                     document.getElementById('chimney-repeating').style.height = documentHeight + 'px';
               }
-             
-              window.onload = setBackgroundHeight;
+            //  window.addEventListener('beforeunload', (event) => {
+            //   setBackgroundHeight()
+            //   });
+              // window.onload = setBackgroundHeight;
+              // window=
+          
 
+  //              const isReload =
+  // performance.getEntriesByType('navigation')[0]?.type === 'reload' 
+
+  //             isReload = setBackgroundHeight
               
               window.onresize = setBackgroundHeight;
-             
+             window.onload = setBackgroundHeight;
               document.querySelectorAll('details').forEach(detail => {
                 detail.addEventListener('toggle', setBackgroundHeight);
             });
+            // window.addEventListener('beforeunload', function(event) {
+  // Perform actions here, such as saving unsaved data or prompting the user
+
+            // To display a confirmation dialog box (behavior varies by browser for security)
+            // event.preventDefault(); // For modern browsers
+           
+            // event.returnValue = ''; // For older browsers
+          // });
+    //           window.onload = function() {
+    // // Check if the session storage item exists
+              
+    //           setBackgroundHeight()//wow that worked? thank you thing inventor!
+    //       };
+          if (window.performance) {
+                const navigationEntries = window.performance.getEntriesByType('navigation');
+                if (navigationEntries.length > 0) {
+                    if (navigationEntries[0].type === 'reload') {
+                        console.log("Page was reloaded specifically!");
+                        setBackgroundHeight();
+                    } else {
+                      setBackgroundHeight();
+                        console.log("Page was not a specific reload, type:", navigationEntries[0].type);
+                    }
+                }
+            }
+        }
+    
         // const button = document.getElementById("button");
         // button.addEventListener("click", ToggleParagraph);
         // function ToggleParagraph() 
@@ -174,7 +209,9 @@ function includeHTML() {
         // paragraph.classList.toggle("hidden"); 
         // // setBackgroundHeight();
         // }     
-}
+        
+
+
 
 
 
