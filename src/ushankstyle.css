@@ -397,3 +397,40 @@ button{
   font-size: 90%;
   border-radius: 5px;
 }
+/* #mook-blurb
+{
+  padding: .5rem 1rem;
+   display: block;
+    text-align: left;
+   
+    background-size:70%;
+     height: auto;
+} */
+.container {
+  left: auto;
+   width: auto; 
+    margin-left: 15%;
+    margin-right: 15%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* grid-template-rows: 25%; */
+  /* background-color: dodgerblue; */
+  padding: .1rem;
+}
+.container div {
+  background-color: #00a93e5d;
+  border: 2px solid black;
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+  text-align: left;
+  
+}
+#container-img
+{
+    display: block;
+  margin: auto;
+   width: 75%;
+
+}
+
+
