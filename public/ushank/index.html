@@ -10,7 +10,7 @@
   </head>
   <body>
     
-    <audio loop autoplay>
+    <audio id="background-music" loop autoplay>
         <source src="/public/runner.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -48,11 +48,37 @@
     <br>
     <br>
     <a href="/public/ushank//about.html#character-ushank"><img id="ushankrender" src="ushankrender.png" alt="Render of Ushank with his bird"></a>
+     
+      <video width="600" height="400"  controls id="my-video">
+        <source src="/ushank/Ushank-pref-final-three.mp4"  type="video/mp4">
+      <!-- <source src="movie.ogg" type="video/ogg"> -->
+    Your browser does not support the video tag.
+    </video> 
+  
     <br><a href="#">
       <img id="demodiscspin" src="/public/ushank/demodiscspin.gif" alt="The demo disc"><br>
       <img src="/public/free.gif"></a>
      <br>
     <br>
+    <script>
+        const audio = document.getElementById("background-music");
+        const video = document.getElementById("my-video");
+
+        // Add an event listener to the video element for the 'play' event
+        video.addEventListener('play', function() {
+            // When the video starts playing, pause the audio element
+            audio.pause();
+        });
+
+        // Optional: You can also add an event listener to resume the audio when the video is paused
+        video.addEventListener('pause', function() {
+            
+            // Check if the audio was playing before and decide whether to resume
+            // This example simply plays it again, which might not be desired for all use cases
+            audio.play(); 
+        });
+
+    </script>
     <a href="#">
 
       
