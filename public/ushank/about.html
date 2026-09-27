@@ -9,6 +9,10 @@
     <title>USHANK IN TRASH ABOUT!!!</title>
   </head>
   <body>
+    <audio id="background-music" loop autoplay>
+        <source src="aboutpagestuff/bouncing-ball.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
          <div w3-include-html="sidebar.html"></div> 
           <!-- <script>
         function changeOnClickImg() {
@@ -338,15 +342,43 @@
               </audio>
                   
             <script>
+                const backgroundAudioPlayer = document.getElementById("background-music");
                   const playButton = document.getElementById('playButton');
                   const audioPlayer = document.getElementById('audioPlayer');
 
-                  playButton.addEventListener('click', function() {
-                      // Optional: reload the audio so it can be played multiple times from the start
-                      // audioPlayer.load();
-                      audioPlayer.currentTime = 0;
-                      audioPlayer.play();
-                  });
+                   // Add an event listener to the video element for the 'play' event
+                    // video.addEventListener('play', function() {
+                    //     // When the video starts playing, pause the audio element
+                    //     audio.pause();
+                    // });
+
+                    // // Optional: You can also add an event listener to resume the audio when the video is paused
+                    // video.addEventListener('pause', function() {
+                        
+                    //     // Check if the audio was playing before and decide whether to resume
+                    //     // This example simply plays it again, which might not be desired for all use cases
+                    //     audio.play(); 
+                    // });
+                  // playButton.addEventListener('click', function() {
+                  //     // Optional: reload the audio so it can be played multiple times from the start
+                  //     // audioPlayer.load();
+                  //     backgroundAudioPlayer.play();
+                      
+                  //     audioPlayer.play();
+                  // });
+                  playButton.addEventListener("click", function() {
+                  if (audioPlayer.paused) {
+                    audioPlayer.play();
+                    audioPlayer.currentTime = 0;
+                      backgroundAudioPlayer.pause();
+                    // button.textContent = "Pause"; // Update button text
+                  } else {
+                     backgroundAudioPlayer.play();
+                    audioPlayer.pause();
+                   
+                    // button.textContent = "Play";  // Update button text
+                  }
+                });
             </script>
           </details>
 
