@@ -112,93 +112,85 @@ function includeHTML() {
     }
   }
 
-   var coll = document.getElementsByClassName("collapsible");
-      var i;
-         var chimney = document.getElementById('chimney-repeating')
+  var coll = document.getElementsByClassName("collapsible");
+var i;
+var chimney = document.getElementById('chimney-repeating'); // Can be null
 
-      var checkCollapcible = function() {
-        for (var j = coll.length - 1; j >= 0;  j--) {
-            if (coll[j].classList.contains('active')) {
-              console.log(j, coll[j].classList);
-              var c2 = coll[j].nextElementSibling;
-              console.log(c2);
-              c2.style.maxHeight = null;
-              c2.style.maxHeight = c2.scrollHeight + "px";
-              chimney.style.height = (c2.scrollHeight ) + 2048  + "px";
-            }
-          }
-      };
-
-      for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var content = this.nextElementSibling;
-          if (content.style.maxHeight){
-            content.style.maxHeight = null;
-          } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            chimney.style.height = (content.scrollHeight) + 2048 + "px";
-          } 
-          window.setTimeout(checkCollapcible, 200);
-        });
-      }
-     
-       function setBackgroundHeight() {
- 
-                    const body = document.body;
-                    const html = document.documentElement;
-
-                    const documentHeight = Math.max(
-                      body.scrollHeight, body.offsetHeight,
-                      html.clientHeight,  html.offsetHeight
-                    );
-
-                    
-                    document.getElementById('chimney-repeating').style.height = documentHeight + 'px';
-              }
-            //  window.addEventListener('beforeunload', (event) => {
-            //   setBackgroundHeight()
-            //   });
-              // window.onload = setBackgroundHeight;
-              // window=
-          
-
-  //              const isReload =
-  // performance.getEntriesByType('navigation')[0]?.type === 'reload' 
-
-  //             isReload = setBackgroundHeight
-              
-              window.onresize = setBackgroundHeight;
-             window.onload = setBackgroundHeight;
-              document.querySelectorAll('details').forEach(detail => {
-                detail.addEventListener('toggle', setBackgroundHeight);
-            });
-            // window.addEventListener('beforeunload', function(event) {
-  // Perform actions here, such as saving unsaved data or prompting the user
-
-            // To display a confirmation dialog box (behavior varies by browser for security)
-            // event.preventDefault(); // For modern browsers
-           
-            // event.returnValue = ''; // For older browsers
-          // });
-    //           window.onload = function() {
-    // // Check if the session storage item exists
-              
-    //           setBackgroundHeight()//wow that worked? thank you thing inventor!
-    //       };
-          if (window.performance) {
-                const navigationEntries = window.performance.getEntriesByType('navigation');
-                if (navigationEntries.length > 0) {
-                    if (navigationEntries[0].type === 'reload') {
-                        console.log("Page was reloaded specifically!");
-                        setBackgroundHeight();
-                    } else {
-                      setBackgroundHeight();
-                        console.log("Page was not a specific reload, type:", navigationEntries[0].type);
-                    }
+var checkCollapcible = function() {
+    for (var j = coll.length - 1; j >= 0;  j--) {
+        if (coll[j].classList.contains('active')) {
+            console.log(j, coll[j].classList);
+            var c2 = coll[j].nextElementSibling;
+            console.log(c2);
+            
+            // 1. Added null check for c2
+            if (c2) {
+                c2.style.maxHeight = null;
+                c2.style.maxHeight = c2.scrollHeight + "px";
+                
+                // 2. Added null check for chimney
+                if (chimney) {
+                    chimney.style.height = (c2.scrollHeight) + 2048  + "px";
                 }
             }
         }
+    }
+};
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        
+        // 3. Added null check for content
+        if (content) {
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                
+                // 4. Added null check for chimney
+                if (chimney) {
+                    chimney.style.height = (content.scrollHeight) + 2048 + "px";
+                }
+            }
+        }
+        window.setTimeout(checkCollapcible, 200);
+    });
+}
+
+function setBackgroundHeight() {
+    const body = document.body;
+    const html = document.documentElement;
+    const documentHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.offsetHeight);
+    
+    // 5. Added null check for chimney
+    const chimneyElement = document.getElementById('chimney-repeating');
+    if (chimneyElement) {
+        chimneyElement.style.height = documentHeight + 'px';
+    }
+}
+
+window.onresize = setBackgroundHeight;
+window.onload = setBackgroundHeight;
+
+document.querySelectorAll('details').forEach(detail => {
+    detail.addEventListener('toggle', setBackgroundHeight);
+});
+
+if (window.performance) {
+    const navigationEntries = window.performance.getEntriesByType('navigation');
+    if (navigationEntries.length > 0) {
+        if (navigationEntries[0].type === 'reload') {
+            console.log("Page was reloaded specifically!");
+            setBackgroundHeight();
+        } else {
+            setBackgroundHeight();
+            console.log("Page was not a specific reload, type:", navigationEntries[0].type);
+        }
+    }
+}
+}
     
         // const button = document.getElementById("button");
         // button.addEventListener("click", ToggleParagraph);
@@ -209,9 +201,235 @@ function includeHTML() {
         // paragraph.classList.toggle("hidden"); 
         // // setBackgroundHeight();
         // }     
-        
-        
+     document.addEventListener('DOMContentLoaded', () => {
+    const launchBtn = document.getElementById('launch-btn');
+    const stepInit = document.getElementById('step-init');
+    const stepLoading = document.getElementById('step-loading');
+    
+    const enterBtn = document.getElementById('enter-btn');
+    const preloader = document.getElementById('preloader');
+    const bgMusic = document.getElementById('bg-music');
+    const statusText = document.getElementById('status-text');
+    const progressBar = document.getElementById('progress-bar');
+
+    // Array of text phases to give it an authentic dial-up/network connection feel
+    const phrases = [
+        "Initializing modem...",
+        "Dialing network gateway...",
+        "Verifying username and password...",
+        "Exchanging security certificates...",
+        "Establishing data link protocol...",
+        "Connected to JAGCAC network!"
+    ];
+
+    function runMockLoadingBar() {
+        let progress = 0;
+        let phraseIndex = 0;
+
+        // Progress bar ticker loop
+        const interval = setInterval(() => {
+            // Speed up or slow down randomly to make it feel organic
+            progress += Math.floor(Math.random() * 8) + 4; 
+
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+                
+                // Connection complete UI updates
+                if (statusText) statusText.innerText = phrases[phrases.length - 1];
+                if (progressBar && progressBar.parentElement) {
+                    progressBar.parentElement.style.display = 'none'; // Hide empty container
+                }
+                if (enterBtn) enterBtn.style.display = 'inline-block'; // Reveal final action button
+            } else {
+                if (progressBar) progressBar.style.width = `${progress}%`;
+                
+                // Cycle through text phrases relative to the progress percentage
+                let currentPhase = Math.floor((progress / 100) * (phrases.length - 1));
+                if (currentPhase > phraseIndex && currentPhase < phrases.length - 1) {
+                    phraseIndex = currentPhase;
+                    if (statusText) statusText.innerText = phrases[phraseIndex];
+                }
+            }
+        }, 250);
+    }
+
+    // --- STEP 1: Boot Button Click Handler ---
+    if (launchBtn) {
+        launchBtn.addEventListener('click', () => {
+            // Unlocks audio element context safely
+            if (bgMusic) {
+                bgMusic.play().catch(err => console.warn("Audio element blocked:", err));
+            }
+
+            // Swap visibility layouts from Start button to Connection Bar
+            stepInit.style.display = 'none';
+            stepLoading.style.display = 'block';
+
+            // Kick off the visual progression bar safely
+            runMockLoadingBar();
+
+            // Quietly register service worker caching in backend shell
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(() => {});
+            }
+        });
+    }
+
+    // --- STEP 2: Final Site Redirection ---
+    if (enterBtn) {
+        enterBtn.addEventListener('click', () => {
+            if (bgMusic) {
+                bgMusic.pause();
+                bgMusic.currentTime = 0; // Reset dial-up tracker
+            }
+            
+            // Redirect straight to your custom dashboard layout routing page
+            window.location.href = '/home';
+        });
+    }
+});
 
 
 
+
+
+// 1. Move the initialization logic into a dedicated boot function
+function initCustomVideoPlayer() {
+  const audio = document.getElementById("background-music");
+  const video = document.getElementById("my-video");
+  
+  const playPauseBtn = document.getElementById('play-pause-btn');
+  const muteBtn = document.getElementById('mute-btn');
+  const volumeSlider = document.getElementById('volume-slider');
+  const progressBar = document.getElementById('progress-bar');
+  const timeDisplay = document.getElementById('time-display');
+  const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+  // PNG Icon Element Trackers
+  const playIcon = document.getElementById('play-icon');
+  const volumeIcon = document.getElementById('volume-icon');
+  // const fullscreenIcon = document.getElementById('volume-icon');
+  if (!video || !playPauseBtn) return false;
+
+  // Paths to your PNG assets (Adjust these to match your actual folders)
+  const icons = {
+    play: "/public/icons/play.png",
+    pause: "/public/icons/pause.png",
+    volumeUp: "/public/icons/volume-up.png",
+    volumeMute: "/public/icons/volume-mute.png",
+    // fullscreen: "/public/icons/fullscreen.png"
+  };
+
+  function togglePlay() {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+
+  function toggleMute() {
+    video.muted = !video.muted;
+    volumeIcon.src = video.muted ? icons.volumeMute : icons.volumeUp;
+    volumeSlider.value = video.muted ? 0 : video.volume;
+  }
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      video.parentElement.requestFullscreen().catch(err => console.error(err));
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+  // Click Actions
+  playPauseBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    togglePlay();
+  });
+
+  video.addEventListener('click', togglePlay);
+
+  video.addEventListener('play', () => {
+    if (playIcon) playIcon.src = icons.pause;
+    if (audio) audio.pause();
+  });
+
+  video.addEventListener('pause', () => {
+    if (playIcon) playIcon.src = icons.play;
+    if (audio) audio.play();
+  });
+
+  // Timeline Progress
+  video.addEventListener('timeupdate', () => {
+    if (!isNaN(video.duration)) {
+      const percentage = (video.currentTime / video.duration) * 100;
+      progressBar.value = percentage;
+      
+      const minCur = Math.floor(video.currentTime / 60).toString().padStart(2, '0');
+      const secCur = Math.floor(video.currentTime % 60).toString().padStart(2, '0');
+      const minDur = Math.floor(video.duration / 60).toString().padStart(2, '0');
+      const secDur = Math.floor(video.duration % 60).toString().padStart(2, '0');
+      
+      timeDisplay.textContent = `${minCur}:${secCur} / ${minDur}:${secDur}`;
+    }
+  });
+
+  progressBar.addEventListener('input', () => {
+    video.currentTime = (progressBar.value / 100) * video.duration;
+  });
+
+  // Volume
+  volumeSlider.addEventListener('input', () => {
+    video.volume = volumeSlider.value;
+    video.muted = video.volume === 0;
+    if (volumeIcon) {
+      volumeIcon.src = video.muted ? icons.volumeMute : icons.volumeUp;
+    }
+  });
+
+  muteBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMute();
+  });
+
+  fullscreenBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleFullscreen();
+  });
+
+
+  // KEYBOARD CONTROLS SYSTEM
+  // Adds listeners globally across the active webpage document window
+  document.addEventListener('keydown', (e) => {
+    // Safety guardrail: Do not fire keys if user is typing inside an input box elsewhere
+    if (document.activeElement.tagName === 'INPUT' && document.activeElement.type === 'text') {
+      return;
+    }
+
+    switch(e.code) {
+      case 'Space':
+        e.preventDefault(); // Prevents spacebar from bouncing your webpage scrolling downwards
+        togglePlay();
+        break;
+      case 'KeyM':
+        toggleMute();
+        break;
+      case 'KeyF':
+        toggleFullscreen();
+        break;
+      case 'ArrowRight':
+        e.preventDefault();
+        video.currentTime = Math.min(video.duration, video.currentTime + 5); // Fast forward 5 seconds
+        break;
+      case 'ArrowLeft':
+        e.preventDefault();
+        video.currentTime = Math.max(0, video.currentTime - 5); // Rewind 5 seconds
+        break;
+    }
+  });
+
+  return true;
+}
 

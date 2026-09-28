@@ -1,81 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/fabicon.ico" />
-    <link rel="stylesheet" href="/src/style.css" />
-     <script src="/src/main.js" id="mainjs"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JAGCAC CREATIONS</title>
-  </head>
- 
-  <!-- <script src="/src/IncludeHTML.js"></script> -->
-  <body>
-       <audio loop autoplay>
-        <source src="/public/bitbossa.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOADING JAGCAC</title>
+    <link rel="stylesheet" href="/src/loading.css">
+    <script type="module" src="/src/main.js" id="mainjs"></script>
+</head>
+<body>
+
+    <audio id="bg-music">
+        <source src="/icons/dial-up.ogg.ogg" type="audio/ogg">
     </audio>
-    <div w3-include-html="menu-header.html"></div> 
-    <!-- <script>
-    includeHTML.includeHTML();
-    </script>  -->
 
+    <!-- Master Preloader Wrapper -->
+    <div id="preloader">
+        <div class="loader-content">
+            
+            <!-- STEP 1: Initial User Interaction (Unlocks Audio) -->
+            <div id="step-init">
+                <h2>System Offline</h2>
+                <button id="launch-btn" class="glow-btn">Boot Up & Connect</button>
+            </div>
 
-    <div id="content">
-     
-      <div id="title">
-        <img id="duck" src="/public/duck.gif"> 
-        <b><br>
-        
-        WELCOME TO LAND OF DUMB!
-        <br>
-        JAGCAC CREATIONS !!!
-        </b>
-        <img id="duck" src="/public/duck.gif"> 
-      </div>
-      
-      <button><img id="rotatearrowleft" src="/public/pizzaarrow.png"></button>
-      
-      <style>
-        #rotatearrowright {
-          -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-        }
-      </style>
-        
-      <button><img id="rotatearrowright" src="/public/pizzaarrow.png"></button>
-      
-      <div id="rotateobj">
-      <img id="pizzadisc" src="/public/pizzadisc.png">
+            <!-- STEP 2: The Loading Process (Plays Audio Here) -->
+            <div id="step-loading" style="display: none;">
+                <h2 id="status-text">Connecting to network...</h2>
+                <div class="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <button id="enter-btn" style="display: none;">Connected! Click to Enter</button>
+            </div>
+
+        </div>
     </div>
-    <script>SetPizza()</script>
-    <!-- needs pizza spinner here -->
-     
-      <!-- ra<br>
-      ra<br>
-      ra<br>
-      ra<br>
-      ra<br>
-      rasputin -->
-      <br>
-      
-      <br>
 
-      <a href="/public/wiporio.html">
-      <img id="wiporiomakespag" src="/public/wipmakespag.gif">
-      <div id="title"><br> FREE CHARACTER!</div></a>
-      <br>yes really<br><br><br><br><br><br>
-      a
-    </div>
-    
-    <!-- <div id="app"></div> -->
-    <!-- <script type="module" src="/src/main.js"></script> -->
-
-
-    <div w3-include-html="footer.html"></div> 
-      
-      <script>
-      includeHTML();
-      </script> 
-  </body>
+</body>
 </html>

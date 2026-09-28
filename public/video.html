@@ -1,0 +1,270 @@
+<div class="video-container">
+  <!-- We add an inline onclick check just to force test the connection -->
+  <video width="600" height="400" id="my-video" style="pointer-events: auto;">
+    <source id="video-source" src="/public/ushank/ushanktrailer-pre-final-three.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  
+  <div class="custom-controls">
+    <div class="progress-container">
+      <input type="range" id="progress-bar" min="0" max="100" value="0">
+    </div>
+
+    <div class="buttons-row">
+      <div class="left-controls">
+        <button id="play-pause-btn" class="control-btn"><img src="/public/icons/play.png" alt="play/pause" id="play-icon"></button>
+        <div class="volume-container">
+          <button id="mute-btn" class="control-btn"><img src="/public/icons/volume-up.png" alt="volume" id="volume-icon"></button>
+          <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+        </div>
+        <span id="time-display" class="time">00:00 / 00:00</span>
+      </div>
+      
+      <div class="right-controls">
+        <button id="fullscreen-btn" class="control-btn"><img src="/public/icons/fullscreen.png" alt="fullscreen"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- At the bottom of your HTML file, just before </body> -->
+
+
+<style>
+    /* Container holding the video and custom UI layout */
+.video-container {
+     display: block;   /* Allows the element to accept margins */
+  margin: 0 auto;   
+  position: relative !important;
+  width: 600px;  
+  height: 400px; 
+  background-color: #000;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.custom-controls {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999 !important; /* Force to absolute top */
+}
+
+/* Ensure controls are completely interactive */
+.custom-controls *, 
+.control-btn, 
+#progress-bar, 
+#volume-slider {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+
+/* Hover effect reveals custom UI panel */
+.video-container:hover .custom-controls {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Timeline progress slider layout */
+.progress-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.progress-container input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+  accent-color: #ff0055; /* Modern browser custom accent color */
+}
+
+/* Flex layout for alignment of play, volume, and fullscreen icons */
+.buttons-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.custom-controls button,
+.custom-controls input[type="range"] {
+  position: relative;
+  z-index: 3;
+  pointer-events: auto !important; 
+  cursor: pointer;
+}
+.left-controls, .right-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.video-container {
+  position: relative !important;
+  width: 600px;  
+  height: 400px; 
+  background-color: #000;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+/* This creates an invisible layer floating exactly over the top of the video */
+.video-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* Path to your custom fixed-frame PNG asset */
+  background-image: url('/public/icons/border-frame.png');
+  background-size: 100% 100%; /* Stretches the PNG perfectly to the border edges */
+  background-repeat: no-repeat;
+  
+  /* 
+    CRITICAL: Allows clicks to pass right through the decorative frame 
+    so users can still click the video and control buttons.
+  */
+  pointer-events: none; 
+  
+  /* 
+    Sits above the video layer (z-index: 1) but stays below 
+    the control elements (z-index: 9999) so it doesn't cover buttons.
+  */
+  z-index: 5; 
+}
+
+.volume-container input[type="range"] {
+  width: 70px;
+  accent-color: #fff;
+  cursor: pointer;
+}
+
+/* Shared button styling configurations */
+.control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+}
+
+.control-btn img {
+  display: block;
+  pointer-events: none; /* Prevents dragging the image icon file with your mouse */
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+  color: #ff0055;
+}
+
+.time {
+  color: #e0e0e0;
+  font-size: 13px;
+}
+/* ==========================================================================
+   CUSTOM PNG SLIDER HANDLES (THUMBS)
+   ========================================================================== */
+
+/* 1. Base Range Input Setup */
+.video-container input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 24px; /* Slightly taller track box to fit custom images safely */
+  display: flex;
+  align-items: center;
+}
+
+/* 2. WebKit Engine: Chrome, Safari, Edge, Opera */
+.video-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  
+  /* Path to your custom thumb asset */
+  background-image: url('/public/icons/handle.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  /* MATCH THESE TO YOUR PNG ASSET DIMENSIONS */
+  height: 20px; 
+  width: 20px;
+  
+  border: none;
+  background-color: transparent; /* Strips browser color filters */
+  box-shadow: none;
+  
+  /* Centers the center-line height relative to standard tracks */
+  margin-top: -8px; 
+  
+  /* Optional: keeps clean hover scale interaction */
+  transform: scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+.video-container input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* 3. Gecko Engine: Firefox */
+.video-container input[type="range"]::-moz-range-thumb {
+  border: none;
+  background-color: transparent;
+  
+  background-image: url('/public/icons/handle.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  /* MATCH THESE TO YOUR PNG ASSET DIMENSIONS */
+  height: 32px;
+  width: 32px;
+  box-shadow: none;
+  
+  transform: scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+.video-container input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* 4. Underlying Tracks Adjustment */
+.video-container input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.video-container input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+</style>
+
+

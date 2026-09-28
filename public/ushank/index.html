@@ -9,13 +9,13 @@
     <title>USHANK IN TRASH ATTACK!!!</title>
   </head>
   <body>
-    
+       <div w3-include-html="sidebar.html"></div> 
     <audio id="background-music" loop autoplay>
         <source src="/public/runner.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     
-           <div w3-include-html="sidebar.html"></div> 
+        
           <!-- <script>
         function changeOnClickImg() {
           if (document.getElementById("menuitem").style.backgroundImage == "url(/public/ushank/chimney-selection-red.gif)") {
@@ -39,7 +39,7 @@
     <img id="ushank-logo" src="/public/ushank/ushanklogo.png"> </div><br>
     <div id="header">
     USHANK IN TRASH ATTACK!!! <br>
-    A <a href="/index.html">JAGCAC CREATION!</a></div>
+    A <a href="/public/home">JAGCAC CREATION!</a></div>
     <br><br>
     "Madness for you" - Jarrod<br>
     "Geiger but cartoony" - Lucas<br>
@@ -49,11 +49,7 @@
     <br>
     <a href="/public/ushank//about.html#character-ushank"><img id="ushankrender" src="ushankrender.png" alt="Render of Ushank with his bird"></a>
      
-      <video width="600" height="400"  controls id="my-video">
-        <source src="/public/ushank/ushanktrailer-pre-final-three.webm"  type="video/webm">
-      <!-- <source src="movie.ogg" type="video/ogg"> -->
-    Your browser does not support the video tag.
-    </video> 
+      <div w3-include-html="/public/video.html"></div> 
   
     <br><a href="#">
       <img id="demodiscspin" src="/public/ushank/demodiscspin.gif" alt="The demo disc"><br>
@@ -71,7 +67,7 @@
 
 </a>
    <br>
-    <script>
+    <!-- <script>
       // res.setHeader('Content-Type', 'video/webm');
         const audio = document.getElementById("background-music");
         const video = document.getElementById("my-video");
@@ -90,7 +86,7 @@
             audio.play(); 
         });
 
-    </script>
+    </script> -->
     
     </a>
     <br><br><br><br><br>
