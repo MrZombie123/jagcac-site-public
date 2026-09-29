@@ -19,7 +19,13 @@ font-size:1.75rem;
 a{
       cursor: url(/public/ushank/cursorhover.png),pointer;
 }
-
+#enclosedinstructionbook
+{
+    position: absolute;
+    height: auto;
+    width: 20vw;
+  transform: scale(1) translateX(20vw)translateY(0);
+}
 #chimney-top {
   padding: 0;
   width: 26.67vw;

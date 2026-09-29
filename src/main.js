@@ -296,29 +296,31 @@ if (window.performance) {
 
 // 1. Move the initialization logic into a dedicated boot function
 function initCustomVideoPlayer() {
-  const audio = document.getElementById("background-music");
-  const video = document.getElementById("my-video");
-  
+  const audio = document.getElementById('background-music');
+  const video = document.getElementById('my-video');
   const playPauseBtn = document.getElementById('play-pause-btn');
   const muteBtn = document.getElementById('mute-btn');
   const volumeSlider = document.getElementById('volume-slider');
   const progressBar = document.getElementById('progress-bar');
   const timeDisplay = document.getElementById('time-display');
   const fullscreenBtn = document.getElementById('fullscreen-btn');
-
+  
   // PNG Icon Element Trackers
   const playIcon = document.getElementById('play-icon');
   const volumeIcon = document.getElementById('volume-icon');
-  // const fullscreenIcon = document.getElementById('volume-icon');
-  if (!video || !playPauseBtn) return false;
+   const videoBorder = document.getElementById('video-border');
+  
+if (!video || !playPauseBtn) {
+  console.warn('player init: elements missing', { video, playPauseBtn });
+  return false;
+}
 
-  // Paths to your PNG assets (Adjust these to match your actual folders)
+  // Paths to your PNG assets
   const icons = {
-    play: "/public/icons/play.png",
-    pause: "/public/icons/pause.png",
-    volumeUp: "/public/icons/volume-up.png",
-    volumeMute: "/public/icons/volume-mute.png",
-    // fullscreen: "/public/icons/fullscreen.png"
+    play: '/icons/play.png',
+    pause: '/icons/pause.png',
+    volumeUp: '/icons/volume-up.png',
+    volumeMute: '/icons/volume-mute.png'
   };
 
   function togglePlay() {
@@ -331,31 +333,39 @@ function initCustomVideoPlayer() {
 
   function toggleMute() {
     video.muted = !video.muted;
-    volumeIcon.src = video.muted ? icons.volumeMute : icons.volumeUp;
-    volumeSlider.value = video.muted ? 0 : video.volume;
+    if (volumeIcon) volumeIcon.src = video.muted ? icons.volumeMute : icons.volumeUp;
+    if (volumeSlider) volumeSlider.value = video.muted ? 0 : video.volume;
   }
-
-  function toggleFullscreen() {
-    if (!document.fullscreenElement) {
-      video.parentElement.requestFullscreen().catch(err => console.error(err));
-    } else {
-      document.exitFullscreen();
-    }
+document.addEventListener("fullscreenchange", () => {
+  if (document.fullscreenElement) {
+    // We are now in fullscreen mode
+    videoBorder.style.display = "none";
+  } else {
+    // We have exited fullscreen mode (via button or Esc key)
+    videoBorder.style.display = "block"; // or "flex", "inline-block", etc.
   }
+});
+ function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    video.parentElement.requestFullscreen().catch(err => console.error(err));
+  } else {
+    document.exitFullscreen().catch(err => console.error(err));
+  }
+}
 
   // Click Actions
   playPauseBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     togglePlay();
   });
-
+  
   video.addEventListener('click', togglePlay);
-
+  
   video.addEventListener('play', () => {
     if (playIcon) playIcon.src = icons.pause;
     if (audio) audio.pause();
   });
-
+  
   video.addEventListener('pause', () => {
     if (playIcon) playIcon.src = icons.play;
     if (audio) audio.play();
@@ -365,52 +375,56 @@ function initCustomVideoPlayer() {
   video.addEventListener('timeupdate', () => {
     if (!isNaN(video.duration)) {
       const percentage = (video.currentTime / video.duration) * 100;
-      progressBar.value = percentage;
+      if (progressBar) progressBar.value = percentage;
       
       const minCur = Math.floor(video.currentTime / 60).toString().padStart(2, '0');
       const secCur = Math.floor(video.currentTime % 60).toString().padStart(2, '0');
       const minDur = Math.floor(video.duration / 60).toString().padStart(2, '0');
       const secDur = Math.floor(video.duration % 60).toString().padStart(2, '0');
       
-      timeDisplay.textContent = `${minCur}:${secCur} / ${minDur}:${secDur}`;
+      if (timeDisplay) timeDisplay.textContent = `${minCur}:${secCur}/${minDur}:${secDur}`;
     }
   });
 
-  progressBar.addEventListener('input', () => {
-    video.currentTime = (progressBar.value / 100) * video.duration;
-  });
+  if (progressBar) {
+    progressBar.addEventListener('input', () => {
+      video.currentTime = (progressBar.value / 100) * video.duration;
+    });
+  }
 
   // Volume
-  volumeSlider.addEventListener('input', () => {
-    video.volume = volumeSlider.value;
-    video.muted = video.volume === 0;
-    if (volumeIcon) {
-      volumeIcon.src = video.muted ? icons.volumeMute : icons.volumeUp;
-    }
-  });
+  if (volumeSlider) {
+    volumeSlider.addEventListener('input', () => {
+      video.volume = volumeSlider.value;
+      video.muted = video.volume === 0;
+      if (volumeIcon) {
+        volumeIcon.src = video.muted ? icons.volumeMute : icons.volumeUp;
+      }
+    });
+  }
 
-  muteBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleMute();
-  });
+  if (muteBtn) {
+    muteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMute();
+    });
+  }
 
-  fullscreenBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleFullscreen();
-  });
-
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleFullscreen();
+    });
+  }
 
   // KEYBOARD CONTROLS SYSTEM
-  // Adds listeners globally across the active webpage document window
   document.addEventListener('keydown', (e) => {
-    // Safety guardrail: Do not fire keys if user is typing inside an input box elsewhere
     if (document.activeElement.tagName === 'INPUT' && document.activeElement.type === 'text') {
       return;
     }
-
     switch(e.code) {
       case 'Space':
-        e.preventDefault(); // Prevents spacebar from bouncing your webpage scrolling downwards
+        e.preventDefault();
         togglePlay();
         break;
       case 'KeyM':
@@ -421,15 +435,28 @@ function initCustomVideoPlayer() {
         break;
       case 'ArrowRight':
         e.preventDefault();
-        video.currentTime = Math.min(video.duration, video.currentTime + 5); // Fast forward 5 seconds
+        video.currentTime = Math.min(video.duration, video.currentTime + 5);
         break;
       case 'ArrowLeft':
         e.preventDefault();
-        video.currentTime = Math.max(0, video.currentTime - 5); // Rewind 5 seconds
+        video.currentTime = Math.max(0, video.currentTime - 5);
         break;
     }
   });
 
   return true;
+}
+function whenReady() {
+  if (initCustomVideoPlayer()) return;      // elements already there
+  const obs = new MutationObserver(() => {
+    if (initCustomVideoPlayer()) obs.disconnect();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', whenReady);
+} else {
+  whenReady();
 }
 
