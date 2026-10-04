@@ -2,9 +2,9 @@
  <!-- <script src="/src/main.js"></script> -->
 <div class="video-container">
   <!-- We add an inline onclick check just to force test the connection -->
-  <img src="/public/ushank/tv-border.png" alt="" id="video-border">
+  <img src="tv-border.png" alt="" id="video-border">
   <video width="600" height="400" id="my-video" style="pointer-events: auto;">
-    <source id="video-source" src="/public/ushank/ushanktrailer-pre-final-three.webm" type="video/webm">
+    <source id="video-source" src="ushanktrailer-pre-final-three.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
   
@@ -118,6 +118,32 @@
  z-index: 10;
   pointer-events: auto !important; 
   cursor: pointer;
+  -webkit-filter: drop-shadow(0px 0px 0 transparent);
+    filter: drop-shadow(0px 0px 0 transparent);
+    transition: transform 0.5s ease, filter 0.5s ease, -webkit-filter 0.5s ease;
+}
+
+
+
+
+button:hover{
+    
+   
+    -webkit-filter: drop-shadow(2px 2px 0 black)
+    drop-shadow(-2px -2px 0 rgb(0, 0, 0));
+    filter: drop-shadow(5px 5px 0 black) 
+    drop-shadow(-2px -2px 0 black);
+    transition: .1s;
+     transform: scale(1.1,1.1);
+}
+button :active{
+   
+    -webkit-filter: drop-shadow(4px 4px 0 black)
+    drop-shadow(-5px -5px 0 black);
+    filter: drop-shadow(4px 4px 0 black) 
+    drop-shadow(-5px -5px 0 black);
+    transform: scale(1.1,1.1);
+     transition: .1s;
 }
 .left-controls, .right-controls {
   display: flex;

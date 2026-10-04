@@ -344,6 +344,33 @@ button{
      cursor: url(/public/pointer2.png),default;
     background-color: transparent;
     border: transparent;
+     transition: transform 0.5s ease, filter 0.5s ease, -webkit-filter 0.5s ease;
+    
+    /* Base filter state prevents the shadow from snapping instantly */
+    -webkit-filter: drop-shadow(0px 0px 0 transparent);
+    filter: drop-shadow(0px 0px 0 transparent);
+}
+
+
+
+button:hover{
+    
+   
+    -webkit-filter: drop-shadow(2px 2px 0 brown)
+    drop-shadow(-5px -5px 0 brown);
+    filter: drop-shadow(5px 5px 0 brown) 
+    drop-shadow(-5px -5px 0 brown);
+    transition: .2s;
+     transform: scale(1.1,1.1);
+}
+button :active{
+   
+    -webkit-filter: drop-shadow(4px 4px 0 black)
+    drop-shadow(-8px -8px 0 black);
+    filter: drop-shadow(4px 4px 0 black) 
+    drop-shadow(-8px -8px 0 black);
+    transform: scale(1.2,1.2);
+     transition: .1s;
 }
   
  .collapsible {
@@ -415,6 +442,28 @@ button{
   border-radius: 5px;
   text-shadow: 1px 2px 2px rgb(255, 255, 255)
 }
+.hud-container {
+  /* text-align: center; */
+    margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 5;
+  
+  /* width: 50vw;  */
+  
+
+}
+
+.hud-container img {
+  display: block;
+
+  /* justify-content: center;
+  text-align: center; */
+  width: 50vw;
+  height: auto;
+}
+
+
 /* #mook-blurb
 {
   padding: .5rem 1rem;
@@ -464,3 +513,77 @@ button{
 
 
 
+table {
+  /* transform: translateX(10vw) translateY(50vh); */
+  /* justify-content: center; */
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  /* justify-content: center; */
+   width: 65vw;
+   font-size: clamp(2vw, 2vw, 2rem); 
+  /* margin-left: 10vw; */
+  /* margin-top: 50vh; */
+  /* font-size: 4rem; */
+  font-weight: bold;
+  color: rgb(0, 0, 0); /* Inside color of the text */
+  /* Outlines the text by casting shadows top, bottom, left, right, and diagonally */
+  text-shadow: 
+    -1px -1px 0 white,  
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+
+  
+   font-family: 'hardcore pen';
+    -webkit-filter: drop-shadow(2px 2px 0 brown)
+    drop-shadow(-5px -5px 0 brown);
+    filter: drop-shadow(5px 5px 0 brown) 
+    drop-shadow(-5px -5px 0 brown);
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #ece3a5;
+} 
+tr:nth-child(odd) {
+  background-color: #d8dc9e;
+}
+/* tr:nth-child(2) {
+  background-color: #ff0000;
+}
+tr:nth-child(3) {
+  background-color: #9e00ad;
+}
+tr:nth-child(4) {
+  background-color: #fb00ff;
+}
+tr:nth-child(5) {
+  background-color: #ff6f28;
+}
+tr:nth-child(6) {
+  background-color: #ff00f7;
+}
+tr:nth-child(7) {
+  background-color: #00d5ff;
+}tr:nth-child(6) {
+  background-color: #001eff;
+}tr:nth-child(7) {
+  background-color: #000000;
+}tr:nth-child(8) {
+  background-color: #1fd2ff;
+}tr:nth-child(9) {
+  background-color: #59ff00;
+}tr:nth-child(10) {
+  background-color: #5e5e5e;
+}
+tr:nth-child(11) {
+  background-color: #ffffff;
+} */
+tr:first-child{
+  background-color: #ff9d00;
+}

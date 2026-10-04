@@ -33,7 +33,7 @@
    
      
     <main class="content">
-       <div id="scalingbob"> <div id="rotatebitbob"> <img src="/public/ushank/garentee.png" id="garentee">
+       <div id="scalingbob"> <div id="rotatebitbob"> <img src="garentee.png" id="garentee">
      </div></div>
      <div id="title">
     <img id="ushank-logo" src="ushanklogo.png"> </div><br>
@@ -49,8 +49,18 @@
     <br>
     <a href="about.html#character-ushank"><img id="ushankrender" src="ushankrender.png" alt="Render of Ushank with his bird"></a>
      
-      <div w3-include-html="/public/video.html"></div> 
-  
+      <div w3-include-html="../video.html"></div>  <br> <br> <br> <br> 
+       A Steampunked nostalgia fuelled, post soviet, Australian meets slavjank shooter, <br>
+    
+   <div id="header"> OZJANK!</div> <br> <br>
+     PERFECT for Generation Z whom likes crude humour, and atmospheric storytelling. <br>
+     <img src="albetRender.gif" alt="FINALLY A GAME FOR MEMES"><br><br><br>
+    <br>Will you (as <a href="about.html#character-ushank">Ushank</a>) succeed, or end up in a hangover??? <br>Because:
+     <div id="header"> ITS. TIME. TO. TAKE. OUT. THE. TRASH!!!!!</div>
+    <br>
+   
+
+    <br> 
     <br><a href="#">
       <img id="demodiscspin" src="demodiscspin.gif" alt="The demo disc"><br>
       <img src="/public/free.gif"></a>
@@ -89,22 +99,14 @@
     </script> -->
     
     </a>
-    <br><br><br><br><br>
-    A Steampunked fuelled, post soviet, Australian meets slavjank shooter, <br>
-    
-   <div id="header"> OZJANK!</div>
-     PERFECT for Generation Z whom likes crude humour, and atmospheric storytelling. <br>
-     <img src="albetRender.gif" alt="FINALLY A GAME FOR MEMES"><br><br><br>
-    <br>Will you (as <a href="about.html#character-ushank">Ushank</a>) succeed, or end up in a hangover??? <br>Because:
-     <div id="header"> ITS. TIME. TO. TAKE. OUT. THE. TRASH!!!!!</div>
     <br>
-    <!-- <a href="https://store.steampowered.com/"><img src="steamcube.gif"><div id="header">GET IT ON STEAM, BY VALVE!*</div></a>
+     <!-- <a href="https://store.steampowered.com/"><img src="steamcube.gif"><div id="header">GET IT ON STEAM, BY VALVE!*</div></a>
     <br>*Don't know if this custom logo is allowed by Valve,<br> please<a href="/public/contact.html"> contact</a> if this is an issue Valve -->
     <br> <br> <br> <br>
     <a href="https://jagcac-creations.itch.io/ushank-in-trash-attack-epsiode-i"><img src="itchio-logo.gif" alt="itch.io logo"> <br> First episode on itch.io if you want ;)</a>
-
-    <br> <br> <br> <br>
-  </br> legal stuff: music from <a href="https://opengameart.org/content/in-russian-style">https://opengameart.org/content/in-russian-style</a>
+    <br><br><br><br><br>
+   
+  </br> legal stuff: music by Alexandr Zhelanov from <a href="https://opengameart.org/content/in-russian-style">https://opengameart.org/content/in-russian-style</a>
     </main>
     
       <div w3-include-html="ushankfooter.html"></div> 

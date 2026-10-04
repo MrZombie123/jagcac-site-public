@@ -12,7 +12,7 @@
   <!-- <script src="/src/IncludeHTML.js"></script> -->
   <body>
        <audio loop autoplay>
-        <source src="/public/bitbossa.mp3" type="audio/mpeg">
+        <source src="/bitbossa.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <div w3-include-html="menu-header.html"></div> 
@@ -24,16 +24,21 @@
     <div id="content">
      
       <div id="title">
-        <img id="duck" src="/public/duck.gif"> 
+        <img id="duck" src="/duck.gif"> 
         <b><br>
         
         WELCOME TO LAND OF DUMB!
         <br>
         JAGCAC CREATIONS !!!
         </b>
-        <img id="duck" src="/public/duck.gif"> 
+        <img id="duck" src="/duck.gif"> 
       </div>
-      
+      <br>  <div id="title"> CURRENT PROJECT: <br>
+        
+         <a href="/projects.html#ushanklink"></a> 
+        
+        </div>
+         <br>
       <button><img id="rotatearrowleft" src="/public/pizzaarrow.png"></button>
       
       <style>

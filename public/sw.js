@@ -3,7 +3,7 @@ const CACHE_NAME = 'v1-site-assets';
 // Keep your core shell assets here for primary bootstrap
 const ASSETS_TO_CACHE = [
     '/',
-    '/index.html','public/ushank/ushanktrailer-pre-final-three.webm'
+    '/index.html','/ushank/ushanktrailer-pre-final-three.webm'
 ];
 
 self.addEventListener('install', (event) => {
