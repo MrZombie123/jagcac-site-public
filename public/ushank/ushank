@@ -16,18 +16,7 @@
     </audio>
     
         
-          <!-- <script>
-        function changeOnClickImg() {
-          if (document.getElementById("menuitem").style.backgroundImage == "url(/public/ushank/chimney-selection-red.gif)") {
-             document.getElementById("menuitem").style.backgroundImage = "url(/public/ushank/chimney-selection-white.gif)"
-          }
-          else if( document.getElementById("menuitem").style.backgroundImage == "url(/public/ushank/chimney-selection-white.gif)"){
-
-            document.getElementById("menuitem").style.backgroundImage = "url(/public/ushank/chimney-selection-red.gif)";
-          }
-          
-          }
-        </script> -->
+       
    
     
    

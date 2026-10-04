@@ -291,7 +291,7 @@ if (window.performance) {
             }
             
             // 3. Now it is completely safe to redirect without a network abort
-            window.location.href = '/home';
+            window.location.href = './home';
         });
     }
 
