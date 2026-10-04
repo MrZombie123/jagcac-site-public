@@ -277,17 +277,24 @@ if (window.performance) {
     }
 
     // --- STEP 2: Final Site Redirection ---
+       // --- STEP 2: Final Site Redirection ---
     if (enterBtn) {
         enterBtn.addEventListener('click', () => {
             if (bgMusic) {
                 bgMusic.pause();
-                bgMusic.currentTime = 0; // Reset dial-up tracker
+                
+                // 1. Force the audio element to drop its active file source
+                bgMusic.src = ""; 
+                
+                // 2. Force the browser to flush the media stream pipeline cleanly
+                bgMusic.load();   
             }
             
-            // Redirect straight to your custom dashboard layout routing page
+            // 3. Now it is completely safe to redirect without a network abort
             window.location.href = '/home';
         });
     }
+
 });
 
 
