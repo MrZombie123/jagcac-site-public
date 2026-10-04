@@ -15,16 +15,16 @@
 
     <div class="buttons-row">
       <div class="left-controls">
-        <button id="play-pause-btn" class="control-btn"><img src="/public/icons/play.png" alt="play/pause" id="play-icon"></button>
+        <button id="play-pause-btn" class="control-btn"><img src="icons/play.png" alt="play/pause" id="play-icon"></button>
         <div class="volume-container">
-          <button id="mute-btn" class="control-btn"><img src="/public/icons/volume-up.png" alt="volume" id="volume-icon"></button>
+          <button id="mute-btn" class="control-btn"><img src="icons/volume-up.png" alt="volume" id="volume-icon"></button>
           <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
         </div>
         <span id="time-display" class="time">00:00 / 00:00</span>
       </div>
       
       <div class="right-controls">
-        <button id="fullscreen-btn" class="control-btn"><img src="/public/icons/fullscreen.png" alt="fullscreen"></button>
+        <button id="fullscreen-btn" class="control-btn"><img src="icons/fullscreen.png" alt="fullscreen"></button>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
 } */
  @font-face {
     font-family: 'hardcore pen';
-    src: url(/public/hardcore_pen_regular.ttf);
+    src: url(./public/hardcore_pen_regular.ttf);
 }
 #time-display{
    font-family: 'hardcore pen';
@@ -260,7 +260,7 @@ button :active{
   appearance: none;
   
   /* Path to your custom thumb asset */
-  background-image: url('/public/icons/handle.png');
+  background-image: url('./public/icons/handle.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -292,7 +292,7 @@ button :active{
   border: none;
   background-color: transparent;
   
-  background-image: url('/public/icons/handle.png');
+  background-image: url('./public/icons/handle.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
