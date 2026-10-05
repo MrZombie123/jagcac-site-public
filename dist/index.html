@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/fabicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOADING JAGCAC</title>
+    <link rel="stylesheet" href="/src/loading.css">
+    <script type="module" src="/src/main.js" id="mainjs"></script>
+  <script type="module" crossorigin src="/assets/main-B5Qt9EMX.js"></script>
+</head>
+<body>
+
+    <audio id="bg-music">
+        <source src="icons/dial-up.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Master Preloader Wrapper -->
+    <div id="preloader">
+        <div class="loader-content">
+            
+            <!-- STEP 1: Initial User Interaction (Unlocks Audio) -->
+            <div id="step-init">
+                <h2>System Offline</h2>
+                <button id="launch-btn" class="glow-btn">Boot Up & Connect</button>
+            </div>
+
+            <!-- STEP 2: The Loading Process (Plays Audio Here) -->
+            <div id="step-loading" style="display: none;">
+                <h2 id="status-text">Connecting to network...</h2>
+                <div class="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <button id="enter-btn" style="display: none;">Connected! Click to Enter</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
