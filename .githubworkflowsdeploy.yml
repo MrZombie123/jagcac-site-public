@@ -1,4 +1,0 @@
-- name: Checkout
-  uses: actions/checkout@v4
-  with:
-    lfs: true # <-- This instructs the runner to fetch the actual LFS files
