@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/jagcac-site-public/fabicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>USHANK IN EDUCATION AND LEARNING!!!</title>
     <script type="module" crossorigin src="/jagcac-site-public/assets/main-DdAabOQs.js"></script>
-    <link rel="stylesheet" crossorigin href="/jagcac-site-public/assets/ushankstyle-DYy7BGlE.css">
+    <link rel="stylesheet" crossorigin href="/jagcac-site-public/assets/ushankstyle-DHwQtOER.css">
   </head>
   <body>
     <audio src="tutorialpagestuff/liberate-the-stars.ogg" autoplay loop type="audio/ogg" id="bg-music"> your browser don't support the audio element</audio>
@@ -65,6 +65,7 @@
             </details>
              <details><summary><div id="dot-points">-WEAPONRY</div></summary>
               <div id="weapon-controls"></div>
+               <div id="grenade-controls"></div>
                 <p>
                   weapons are select either by (default) the mouse wheel or the numbers keys or the (default) front shoulder buttons. <br>
                   <br>
@@ -72,6 +73,7 @@
                     some weapons have an alternate firing mode (default right mouse, right trigger right), and even fewer need reloading(R key, Y button). you'll know when a
                      weapon needs reloading when the <a href="#clips">clip and mag counter</a>  is on screen. <br>
                     <br>
+                   
                      quick grenade are thrown quickly (default G key, B button) with the quick grenade keys  and don't un-equip weapons when used (they can still be used as regular weapons tho)
                      can be cycled through with quick grenade select keys(default X key Z key, D-pad right) <br>
                     <a href="#grenades"> would you like to know more?</a>
@@ -80,8 +82,11 @@
             <details><summary><div id="dot-points">-INTERACTION & CARRY ITEMS</div></summary>
                 <p>
                  interaction is done with the interact key (default E key, X button). 
-                 You'll know if you click on something as it will do something, you will know when 
-                 it wont by <button id="wpn_deny_button"> making a weird guitar noise!</button><br>
+                 You'll know when something is intractable via the crosshair<img src="/jagcac-site-public/ushank/tutorialpagestuff/hud-crosshair.png" style="   margin-left: 0;
+     margin-right: 0;">turning into a hand<img src="/jagcac-site-public/ushank/interact-hand.gif" style="   margin-left: 0;
+     margin-right: 0;" alt=""> <br>
+                 You'll know if you click on something as it will do something. <br>
+                 You will know when it wont by <button id="wpn_deny_button"> making a weird guitar noise!</button><br>
                  <audio id="wpn_deny_audio"><source src="/jagcac-site-public/ushank/tutorialpagestuff/wpn_denyselect.mp3" type="audio/mp3">Your browser does not support the audio element.</audio>
                   <script>
                 // const backgroundAudioPlayer = document.getElementById("background-music");
@@ -309,14 +314,69 @@
                   for EVEN MORE about <a href="#weapon-controls">weapons</a>
                     <details><summary><div id="dot-points">-Guns</div></summary>
                        <p>
-                          GUNS are a important part of any shooter game!
-
+                          GUNS are a important part of any shooter game! <br>
+                          there are over 20 weapons in the game! Each one with its own upside and downsides
                           </p>
                       </details> 
                       <details><summary> <div id="dot-points">-grenades</div></summary>
                         <div id="grenades"></div>
                        <p>
+                       If you want to know about  <a href="#grenade-controls">grenade controls...</a>
+                        Heres the 4 types of grenades <br>
+                        <table style="
+                       
+                        font-size: clamp(2vw, 2vw, 2rem); 
+                         -webkit-filter: drop-shadow(2px 2px 0 rgba(165, 42, 42, 0))
+    drop-shadow(-5px -5px 0 rgba(165, 42, 42, 0));
+    filter: drop-shadow(5px 5px 0 rgba(165, 42, 42, 0)) 
+    drop-shadow(-5px -5px 0 rgba(165, 42, 42, 0));background-color: #00000000;
+    "
+                        >
+                          <tr style="
+  border: 1px solid #00000000;background-color: #00000000;
 
+">
+                            <td style="  border: 1px solid #00000000;  background-color: #00000000;">  <img src="tutorialpagestuff/ammo-icons/ammo_icon_avogrenades.png" alt=""></td>
+                            <td style="  border: 1px solid #00000000;  background-color: #00000000;"> <img src="tutorialpagestuff/ammo-icons/ammo_icon_loogrenades.png" alt=""></td>
+                            <td style="  border: 1px solid #00000000;  background-color: #00000000;">
+                                 <img src="tutorialpagestuff/ammo-icons/ammo_icon_boltgrenades.png" alt="">
+                            </td>
+                            <td style="  border: 1px solid #00000000;  background-color: #00000000;">
+                                <img src="tutorialpagestuff/ammo-icons/ammo_icon_trashheadgrenades.png" alt="">
+                            </td>
+                          </tr>
+                          <tr style="
+  border: 1px solid #00000000;background-color: #00000000;
+
+">
+                            <td style=" text-align: center;  border: 1px solid #00000000;  background-color: #00000000;">
+                                -AvoGrenades <br> 
+                                A timed grenade that explodes after ~3 seconds. Or when damaged.
+
+                            </td>
+                            <td style=" text-align: center;  border: 1px solid #00000000;  background-color: #00000000;">
+                                -LooGrenades <br>
+                                An impact grenade, exploding on contact, or when it fuse fizzles out.
+                            </td>
+                            <td style=" text-align: center;  border: 1px solid #00000000;  background-color: #00000000;">
+                                -BoltGrenades <br>
+                                Bolts for making a distraction and detecting anomalies. does 1 damage on contact.
+
+                            </td>
+                            <td style=" text-align: center;  border: 1px solid #00000000;  background-color: #00000000;">
+                                -TrashHeadGrenades <br>
+                                Homing grenades homing towards the nearest enemy. 
+
+                            </td>
+                          </tr>
+                        </table>
+                         
+                         <br>
+                         All but bolt grenades (spawn with player by default) are picked up with their corresponding ammo pickup.
+                       
+                          
+                               
+                          
                           </p>
                       </details>
                      <details><summary><div id="dot-points">-Ammo</div></summary>
@@ -348,7 +408,7 @@
                         <div id="clips"></div>
                         <img src="tutorialpagestuff/clip-counter.gif" alt="clip counter" style="width: 50vw;">
                       <p>
-                          Clips / mags (they use the same counter) are used for some weapons. they include the infi-pistol,  dual infi-pistols, revolver, dual revolver MP40 and M1 Garand!
+                          Clips / mags (they use the same counter) are used for some weapons. They include the infi-pistol,  dual infi-pistols, revolver, dual revolver MP40 and M1 Garand!
                           </p>
                       </details>
                 </p>
@@ -505,8 +565,8 @@
                 <div id="score"></div>
               <p> 
                  
-                Score is a system that been around since the dinosaurs. Although its use has fallen <br>
-                out in recent years, its still (i think) gives a sense of accomplishment and competitiveness. <br>
+                Score is a system that been around since the dinosaurs. Although its use has fallen >
+                out in recent years, its still (i think) gives a sense of accomplishment and competitiveness. 
                 its gained by actions such as:
                 <br>
                 
@@ -526,10 +586,10 @@
             
              <details> <summary><div id="dot-points"><div id="lives" >-LIVES</div></div></summary>
               <p>
-                the Lives system is something else that has fallen out in recent years. especially for <br>
-                shooter games. you gain it via getting an additive amount of score. Every 10000+ points <br>
-                (dependent on the difficult level algorithm) an extra life is granted! don't loose all of them! <br>
-                else you get a Game Over! Your story ends here! until you load your last save. <br>
+                the Lives system is something else that has fallen out in recent years. especially for 
+                shooter games. you gain it via getting an additive amount of score. Every 10000+ points 
+                (dependent on the difficult level algorithm) an extra life is granted! don't loose all of them! 
+                else you get a Game Over! Your story ends here! until you load your last save. 
                 what is the purpose of the Lives system?:
                 <br><b> it'll take too long to make quick-saves!</b>
               </p>
@@ -537,9 +597,13 @@
             
         </details>
          <details> <summary><div id="header">SAVING AND LOADING</div></summary>
-        </div>
         
+        <p>
+          Saving / writing and loading / reading
         
+        </p>
+            </details>
+        </div> 
       </main>
          <div w3-include-html="ushankfooter.html"></div> 
  
